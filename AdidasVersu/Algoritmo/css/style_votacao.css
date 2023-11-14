@@ -21,7 +21,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color:	#FF69B4;
+    background-color:	#0189D0;
 }
 
 .header {
@@ -131,8 +131,8 @@ a {
 }
 
 .botao_log:hover {
-    background-color:	#FF69B4;
-    border: 1px solid 	#FF69B4;
+    background-color:	#0189D0;
+    border: 1px solid 	#0189D0;
     margin-left: 40px;
     padding: .5rem;
 }
@@ -161,19 +161,19 @@ a {
     font-size: 40px;
     font-weight: 600;
     top: 550px;
-    color: #FF69B4;
+    color: #0189D0;
 }
 .votacao button{
     font-size: 30px;
     font-weight: 400;
-    color: #FF69B4; 
+    color: #0189D0; 
     margin-bottom: 100px;
     margin-top: 70px;
 }
 .votacao select{
     font-size: 30px;
     font-weight: 400;
-    color: #FF69B4; 
+    color: #0189D0; 
     margin-bottom: 200px;
     margin-top: 100px;
 }

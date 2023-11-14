@@ -19,7 +19,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color:	#FF69B4;
+    background-color:	#0189D0;
 }
 
 .header {
@@ -79,8 +79,8 @@ a {
 }
 
 .botao_log:hover {
-    background-color:	#FF69B4;
-    border: 1px solid 	#FF69B4;
+    background-color:	#0189D0;
+    border: 1px solid 	#0189D0;
     margin-left: 40px;
     padding: .5rem;
 }
@@ -171,7 +171,7 @@ input::placeholder{
 }
 
 input:focus{
-    background-color: 	#FF69B4;
+    background-color: 	#0189D0;
     outline: 1px solid #9eb7e0;
 }
 
@@ -184,7 +184,7 @@ button{
 }
 
 button:hover{
-    background-color: #FF69B4;
+    background-color: #0189D0;
     cursor: pointer;
 
 }
