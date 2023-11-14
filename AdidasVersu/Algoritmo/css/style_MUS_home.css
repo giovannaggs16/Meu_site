@@ -3,7 +3,7 @@
 * {
     padding: 0;
     margin: 0;
-    color: #181818;
+    color: #777c82;
     font-family: 'Oxanium', sans-serif;
     outline: none;
     background-color: none;
@@ -19,7 +19,7 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 8rem 4rem 4rem 4rem;
-    background-color: #181818;
+    background-color: #777c82 ;
 }
 
 .container {
