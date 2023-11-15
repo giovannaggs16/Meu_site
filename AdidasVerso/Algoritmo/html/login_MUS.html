@@ -2,68 +2,64 @@
 <html lang="pt-br">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Login</title>
-   <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVersu\Algoritmo\css\style_login_MUS.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\style_login_MUS.css" />
 </head>
 
 <script src="./js/funcoes.js"></script>
 
 <body>
-   <div class="header">
-      <div class="logo">
-         <a href="index.html"><img src="Imagens/mus.png" width="200"></a>
-      </div>
+    <div class="header">
+        <div class="logo">
+            <a href="#home"><img
+                    src="C:\Users\55119\Desktop\AdidasVersu\AdidasVersu\Algoritmo\imagens\Inserir um subtítulo.png"
+                    width="200"></a>
+        </div>
 
-      <div class="nav_home">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html">Vote</a></li>
-              <li><a href="index.html">Quem Somos?</a></li>
-              <li><a href="index.html">Avalie aqui</a></li>
-          </ul>
-      </div>
+        <div class="nav_home">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Sobre</a></li>
+                <li><a href="index.html">Quizz</a></li>
+                <li><a href="index.html">Avalie aqui</a></li>
+            </ul>
+        </div>
 
-      <div class="log_cad">
-          <li class="botao_log"><a href="login_MUS.html">Login</a></li>
-          <li class="botao_cad"><a href="cadastro_MUS.html">Cadastro</a></li>
-      </div>
-  </div>
-   <div class="telaLogin">
-      <div class="esquerda-login">
-         <img src="Imagens/guitarra.png" alt="" class="imagemlogo">
-         <a class="botaoVoltarParaATeladeCadastro" href="cadastro_MUS.html"> Não tem uma conta ? Clique aqui!</a>
-      </div>
+        <div class="log_cad">
+            <li class="botao_log"><a href="login_MUS.html">Login</a></li>
+            <li class="botao_cad"><a href="cadastro_MUS.html">Cadastro</a></li>
+        </div>
+    </div>
+    <div class="telaLogin">
+        <h1 class="fraselogin">Login</h1><br>
+        <input type="text" name="Usuario" placeholder="Usuario" id="in_usuario">
+        <input type="password" name="senha" placeholder="Senha" id="in_senha">
+        <div class="sem-cad">
+            <a class="botaoVoltarParaATeladeCadastro" href="cadastro_MUS.html"> Não tem uma conta ? Clique aqui!</a>
+        </div>
 
-      <div class="textologin">
-         <h1 class="fraselogin">Login</h1><br>
-         <div class="centralizar_input">
-            <input type="text" name="Usuario" placeholder="Usuario" id="in_usuario">
-            <input type="password" name="senha" placeholder="Senha" id="in_senha">
-         </div>
-
-         <div class="div_botaologin">
+        <div class="div_botaologin">
             <button class="botaologin" onclick="entrar()"><a>Entrar</a></button>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </body>
 
 </html>
 <script>
- function entrar() {
+    function entrar() {
         var emailVar = in_usuario.value;
         var senhaVar = in_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
             alert('preencha os campos corretamente')
-            
+
             return false;
         }
-        
-      
+
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -104,7 +100,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-           
+
                 });
             }
 
@@ -118,6 +114,3 @@
 
 
 </script>
-
-
-
