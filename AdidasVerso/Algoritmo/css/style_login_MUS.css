@@ -15,7 +15,6 @@
     padding: 10px;
     position: fixed;
     width: 100%;
-
     border-radius: 0 0 10px 10px;
     z-index: 10000000;
 }
@@ -28,7 +27,7 @@
 }
 
 .nav_home {
-    width: 40%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
