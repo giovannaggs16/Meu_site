@@ -22,33 +22,6 @@ html {
     background-color:	#0189D0;
 }
 
-.header {
-    background-color: #181818;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-
-    border-radius: 0 0 10px 10px;
-    z-index: 10000000;
-}
-
-.header .logo {
-    width: 20%;
-    height: 50%;
-    display: flex;
-    align-items: left;
-    justify-content: left;
-}
-
-.nav_home {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 ul {
     display: flex;
@@ -58,7 +31,7 @@ ul {
 }
 
 a {
-    color: #9eb7e0;
+    color: #FFFFFF;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -121,8 +94,6 @@ a {
 .imgForm{
     width: 40%;
     height: 450px;
-    background-image: url("../Imagens/bubbles.png");
-    border-radius: 10px;
     position: relative;
     left: 15px;
 }
@@ -174,12 +145,12 @@ input::placeholder{
 
 input:focus{
     background-color: 	#0189D0;
-    outline: 1px solid #9eb7e0;
+    outline: 1px solid #f1f1f1;
 }
 
 button{
     margin-top: 0rem;
-    background-color: 	#5999e7;
+    background-color:#5999e7;
     color: #FFFFFF;
     padding: .5rem;
     width: 35%;

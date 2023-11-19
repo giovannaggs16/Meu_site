@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', sans-serif;
+}
+
+body{
+background-color: #000000;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:	#0189D0;
+}
+
+
+
+.imgrock{
+    width: 35%;
+    height: 250px;
+    background-image: url("../Imagens/Playing.png");
+    background-size: cover;
+    border-radius: 30px;
+    position: relative;
+    right: 200px;
+
+}
+
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+a {
+    color: #9eb7e0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.imagemQuiz{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log_cad {
+    list-style: none;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botao_serv {
+    background-color: transparent;
+    border: 1px solid #9eb7e0;
+    margin-left: 40px;
+    padding: .5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.botao_serv:hover {
+    background-color:	rgb(175, 28, 131);
+    border: 1px solid 	#0189D0;
+    margin-left: 40px;
+    padding: .5rem;
+}

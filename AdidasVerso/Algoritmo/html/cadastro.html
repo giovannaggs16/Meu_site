@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUS</title>
-    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\style_cadastro_MUS.css">
+    <title>AdidasVerso</title>
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\cadastro.css">
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\navbar.css">
     <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\footer.CSS">
-    
+
 </head>
 
 <body>
     <div class="header">
         <div class="logo">
-            <a href="#home"><img src="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\imagens\logoAdidas2.png" style = width:150px; margin-left: 20px; margin-top: 20px;"width="200" ></a>
+            <a href="#home"><img src="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\imagens\logoAdidas2.png"
+                    style=width:120px; margin-left: 20px; margin-top: 20px;"width="200"></a>
         </div>
 
         <div class="nav_home">
@@ -27,14 +29,12 @@
         </div>
 
         <div class="log_cad">
-            <li class="botao_log"><a href="login_MUS.html">Login</a></li>
-            <li class="botao_cad"><a href="cadastro_MUS.html">Cadastro</a></li>
+            <li class="botao_log"><a href="login.html">Login</a></li>
+            <li class="botao_cad"><a href="cadastro.html">Cadastro</a></li>
         </div>
     </div>
     <div class="cadastro">
         <div class="box_form">
-            <div class="imgForm">
-            </div>
             <div class="caixa_forms">
                 <div class="forms empresa">
                     <h1>Usuario</h1>
@@ -46,17 +46,18 @@
                         <input class="cl_email" type="mail" placeholder="seuemail@email.com" id="in_email">
                     </div>
                     <div class="cl_input">
-                        <input class="cl_senha" type="password" placeholder="Senha" id="in_senha"> 
+                        <input class="cl_senha" type="password" placeholder="Senha" id="in_senha">
                     </div>
-                    <div class="cl_input"> 
-                        <input class="cl_confirmacao" type="password" placeholder="Confirme sua senha" id="in_confirmacao">
+                    <div class="cl_input">
+                        <input class="cl_confirmacao" type="password" placeholder="Confirme sua senha"
+                            id="in_confirmacao">
                     </div>
                 </div>
 
-                   <button class="btn" onclick="cadastrar()"><a>Cadastrar</a></button>
-                </div>
+                <button class="btn" onclick="cadastrar()"><a>Cadastrar</a></button>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="footer">
@@ -67,12 +68,12 @@
             </div>
             <div class="deixe-nos">
                 <h5>Deixe-nos ajudar você</h5>
-               <p><a href="./conta.html">Sua Conta</a></p>
+                <p><a href="./conta.html">Sua Conta</a></p>
                 <p><a href="./tela_inicial.html#suporte-id">Suporte</a></p>
             </div>
             <div class="contatos">
                 <h5>Contatos</h5>
-               <p><a href="http://instagra.com/tecnosolo_"> <img src="../img/Instagram.svg"></a></p>
+                <p><a href="http://instagra.com/tecnosolo_"> <img src="../img/Instagram.svg"></a></p>
                 <p>E-mail:tecnosolo@gmail.com</p>
             </div>
             <div class="mais-informacoes">
@@ -91,7 +92,7 @@
 <script>
 
 
-function cadastrar() {
+    function cadastrar() {
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = in_nome.value;
@@ -101,10 +102,10 @@ function cadastrar() {
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             alert('preencha os campos corretamente')
-            
+
             return false;
-        }   
-        
+        }
+
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -127,8 +128,8 @@ function cadastrar() {
                 setTimeout(() => {
                     window.location = "login_MUS.html";
                 }, "2000")
-                
-                
+
+
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }

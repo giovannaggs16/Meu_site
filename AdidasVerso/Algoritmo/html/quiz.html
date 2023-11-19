@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdidasVerso</title>
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\quiz.css">
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\navbar.css">
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\footer.CSS">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav_home">
+            <ul>
+                <li><a href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\html\Index.HTML">Home</a></li>
+                <li><a href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\html\Index.HTML">Sobre</a></li>
+                <li><a href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\html\Index.HTML">Quizz</a></li>
+                <li><a href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\html\Index.HTML">Avalie aqui</a></li>
+            </ul>
+        </div>
+
+        <div class="log_cad">
+            <li class="botao_log"><a href="login.html">Login</a></li>
+            <li class="botao_cad"><a href="cadastro.html">Cadastro</a></li>
+        </div>
+    </div>
+    <div class="imagemQuiz">
+        <button class="botao_serv"><a href="QuizJogo.html">Iniciar Quiz</a></button>
+        <img src="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\imagens\40e1b2675cb702045f939c243631c961.jpg"  style= width:500px;  margin-top: 30px;"width="300"></div>
+        
+
+    </div>
+
+
+</body>
+
+</html>
+<script>
+
+
+    function cadastrar_musica() {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nome_musicaVar = nome_musica.value;
+        var comentarioVar = comentario.value;
+        var usuario = sessionStorage.getItem('ID_USUARIO')
+
+
+        if (nome_musicaVar == "" || comentarioVar == "") {
+            alert('preencha os campos corretamente')
+
+            return false;
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar_musica", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nome_musicaServer: nome_musicaVar,
+                comentarioServer: comentarioVar,
+                usuario
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                imprimir()
+
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+    function imprimir() {
+        fetch("/usuarios/imprimir").then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(function (response) {
+                    armazenar_musica.innerHTML = ''
+                    for (var i = 0; i < response.length; i++) {
+                        var atual = response[i]
+                        armazenar_musica.innerHTML += `
+                            <div class="resultado">
+                                <p>${atual.nome}</p>
+                                <p>${atual.musica}</p>
+                                <p>${atual.comentario}</p>
+                            </div>
+                            `
+                    }
+                })
+            }
+        })
+    }
+
+    imprimir()
+</script>
