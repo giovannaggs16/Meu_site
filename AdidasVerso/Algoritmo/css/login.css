@@ -7,6 +7,26 @@
     font-family: 'Oxanium', sans-serif;
 }
 
+.body{
+    color: #2e9ab7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2e9ab7;
+}
+
 
 ul {
     display: flex;
@@ -16,75 +36,38 @@ ul {
 }
 
 a {
-    color: #9eb7e0;
+    color: #000000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-.log_cad {
-    list-style: none;
-    width: 20%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.botao_log {
-    background-color: transparent;
-    border: 1px solid #9eb7e0;
-    margin-left: 40px;
-    padding: .5rem;
-    border-radius: 40px;
-}
-
-.botao_log:hover {
-    background-color: #0189D0;
-    border: 1px solid #ef9499;
-    margin-left: 40px;
-    padding: .5rem;
-}
-
-.botao_cad {
-    background:#8B008B;
-    border-radius: 40px;
-    padding: .5rem;
-    transform: scale(1.0);
-    transition: all 0.5s;
-}
-
-.botao_cad:hover {
-    transform: scale(1.1);
-    transition: all 0.5s;
+.header{
+    height: 200%;
+    margin-bottom: 2000px;
 }
 
 .telaLogin {
-    background-color: #181818;
+    background-color: #2e9ab7;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     height: 100%;
     width: 100%;
 }
 
-.caixa_forms{
-    background-color: #9eb7e0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 60%;
-    height: 40%;
-    border-radius: 0 8px 8px 0;
-}
-
-.sem-cad {
-    width: 100%;
+.esquerda-login {
+    width:50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 10%;
+    height: 100%;
+    background: #2e9ab7;
+    margin-top: 7%;
+}
+
+.esquerda-login .imagemlogo {
+    width: 100%;
+    height: 100%;
 }
 
 .fraselogin {
@@ -94,32 +77,47 @@ a {
     color: #FFFFFF;
 }
 
-.telalogin .botaologin {
-    margin-top: 70px;
+.textologin {
+    width: 50%;
+    border: none;
+    padding-top: 100px;
+    background-color: #2e9ab7;
+    font-size: 12pt;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textologin .botaologin {
+    margin-top: 30px;
     width: 50%;
     color: #181818;
-    background-color: 	#8B008B;
-    padding: 15px 30px 15px;
+    background-color: 	#003c8b;
+    padding: 10px 0px 10px;
     font-weight: bold;
     border: none;
-    border-radius: 30px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
-.telaLogin input {
+.textologin input {
     color: #181818;
     background-color: #FFFFFF;
     border: none;
+    box-sizing: border-box;
     width: 70%;
     height: 47px;
     margin-top: 70px;
     border-radius: 7px;
-
+    display: flex;
+    padding: 0 0 0 20px;
 }
 
 .botaoVoltarParaATeladeCadastro {
     border: 0;
-    color: #9eb7e0;
+    color: #000000;
     font-size: 13px;
     font-weight: bold;
     margin-top: 20px;
