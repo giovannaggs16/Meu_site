@@ -105,13 +105,28 @@ a {
 
 }
 
+.infoQuiz{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoQuiz h1{
+
+    font-weight: 700;
+    font-size: 54px;
+    color: #FFFFFF;
+    margin-right: 9rem;
+}
+
+
 .botao_serv {
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #003c8b;
-    border-radius: 20px;
+    border-radius: 2px;
     padding: .3rem;
     transform: scale(1.0);
     transition: all 0.5s;

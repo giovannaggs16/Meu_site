@@ -27,19 +27,24 @@ h1 {
     background-color: #2e9ab7 ;
 }
 
-.servico h1 {
+.infoSus{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.infoSus h1 {
     font-weight: 700;
     font-size: 54px;
     color: #FFFFFF;
-    margin: 0 0 1rem 0;
+    margin-right: 10rem;
 }
 
-.servico p {
-    font-weight: 700;
-    font-size: 24px;
+.infoSus p {
+    font-weight: 100;
+    font-size: 20px;
     color: #FFFFFF;
-    /* margin: 0 0 1rem 0; */
-    margin-right: 10px;
+    margin-left: 2rem;
 }
 
 
