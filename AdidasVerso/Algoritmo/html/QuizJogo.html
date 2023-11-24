@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet"href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\navbar.css">  
-    <link rel="stylesheet"href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\quizJogo.css">  
-    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\footer.CSS|">
+    <link rel="stylesheet"href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\navbar.css">   
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\footer.CSS">
+    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\quizJogo.css">
 
 </head>
 
@@ -37,18 +37,24 @@
             <li class="botao_cad"><a href="cadastro.html">Cadastro</a></li>
         </div>
     </div>
-
     
+    <h1>O que você sabe sobre a marca Adidas?</h1>
+    
+    <div class="quiz-container">
+    
+        <div>
+        <h1>O que você sabe sobre a marca Adidas?</h1>
+        
 
-    <div class="cuidados">O que você sabe sobre a marca Adidas?</div>
-
-    <div id="quiz-container">
-        <div id="question-container"></div>
-        <div id="options-container"></div>
-        <!-- <button onclick="nextQuestion()">Próxima Pergunta</button> -->
+  
+        <div class="question" id="question-container"></div>
+        <div class="option" id="options-container"></div> -->
+        <button onclick="nextQuestion()">Próxima Pergunta</button>
         <p id="score">Pontuação: 0</p>
     </div>
-    
+
+</body>
+</html>
     <script>
         var currentQuestion = 0;
         var score = 0;
@@ -125,5 +131,4 @@
         showQuestion();
     </script>
 
-</body>
-</html>
+
