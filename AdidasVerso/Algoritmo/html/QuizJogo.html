@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Quiz</title>
     <link rel="stylesheet"href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\navbar.css">   
-    <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\footer.CSS">
+
     <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\quizJogo.css">
 
 </head>
@@ -15,7 +15,7 @@
 <script src="./js/funcoes.js"></script>
 
 <body>
-    <div class="header">
+    <div class="headerQuiz">
         <div class="logo">
             <a href="#home"><img src="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\imagens\logoAdidas2.png"
                     style=width:120px; margin-left: 20px; margin-top: 22px;></a>
@@ -38,19 +38,18 @@
         </div>
     </div>
     
-    <h1>O que você sabe sobre a marca Adidas?</h1>
+  
     
     <div class="quiz-container">
     
-        <div>
+   
         <h1>O que você sabe sobre a marca Adidas?</h1>
         
-
   
         <div class="question" id="question-container"></div>
-        <div class="option" id="options-container"></div> -->
-        <button onclick="nextQuestion()">Próxima Pergunta</button>
-        <p id="score">Pontuação: 0</p>
+        <div class="option" id="options-container"></div>  
+        <button class="botao" onclick="nextQuestion()">Próxima Pergunta</button>
+        <p class="pontuacao" id="score">Pontuação: 0</p>
     </div>
 
 </body>
@@ -61,29 +60,29 @@
 
         var questions = [
             {
-                question: "1. O que você pode fazer para reduzir a poluição por plástico nos oceanos?",
-                options: ["Descartar plásticos no oceano", "Reciclar plásticos", "Queimar plásticos", "Ignorar o problema"],
-                correctAnswer: "Reciclar plásticos"
+                question: "1.Em que ano a marca foi fundada?",
+                options: ["1940","1949", "1970" , "1965"],
+                correctAnswer: "1949"
             },
             {
-                question: "2. Qual é uma prática ambientalmente correta ao visitar uma praia?",
-                options: ["Deixar lixo na areia", "Levar conchas e pedras como lembrança", "Fazer fogueiras na areia", "Recolher seu lixo e respeitar a fauna local"],
-                correctAnswer: "Recolher seu lixo e respeitar a fauna local"
+                question: "2.Quantas listras tem as roupas e tenis?",
+                options: ["9","2","6","3"],
+                correctAnswer: "3"
             },
             {
-                question: "3. Como você pode ajudar a conservar os recifes de coral?",
-                options: ["Despejar produtos químicos nos recifes", "Praticar pesca predatória", "Usar protetor solar que contém produtos químicos nocivos", "Evitar tocar nos corais e usar protetor solar seguro para os recifes"],
-                correctAnswer: "Evitar tocar nos corais e usar protetor solar seguro para os recifes"
+                question: "3. Qual nome abaixo representa um lema adidas?",
+                options: ["um por todos e todos por um", "love is love", "impossible is nothing", "i realy dont care"],
+                correctAnswer: "impossible is nothing"
             },
             {
-                question: "4. Como as atividades humanas podem afetar os níveis de pH nos oceanos?",
-                options: ["Não afetam o pH dos oceanos", "Aumentam a acidez dos oceanos", "Diminuem a salinidade dos oceanos", "Não têm impacto no pH dos oceanos"],
-                correctAnswer: "Aumentam a acidez dos oceanos"
+                question: "4.Qual o nome do fundador?",
+                options: ["Adolf Sandler", "Rudolf Dassler", "Adolf Dassler", "Carlos backer"," Mark Zuckerberg"],
+                correctAnswer: "Adolf Dassler"
             },
             {
-                question: "5. Qual é uma maneira eficaz de conservar a vida marinha?",
-                options: ["Descartar redes de pesca no oceano", "Praticar pesca predatória", "Participar de projetos de limpeza de praias", "Despejar resíduos tóxicos no oceano"],
-                correctAnswer: "Participar de projetos de limpeza de praias"
+                question: "5.Adidas é uma marca que prioriza a sustentabilidade?",
+                options: ["Verdadeiro", "Falso"],
+                correctAnswer: "Verdadeiro"
             }
         ];
 
