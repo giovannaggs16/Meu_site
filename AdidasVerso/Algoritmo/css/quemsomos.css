@@ -54,13 +54,13 @@
     margin-top: 200px;
     display: flex;
     justify-content: center;
-    
 }
+
 #comentario{
-    color: #0000;
     width: 30%;
     height: 20px;
 }
+
 .avaliacao button{
     background-color: #9eb7e0;
     width: 20%;

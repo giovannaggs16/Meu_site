@@ -50,8 +50,6 @@
                     <div class="cl_input">
                         <input class="cl_nome" type="text" placeholder="Nome" id="in_nome">
 
-                        <input class="cl_idade" type="text" placeholder="Sua idade" id="in_idade">
-
                         <input class="cl_email" type="mail" placeholder="seuemail@email.com" id="in_email">
                     
                         <input class="cl_senha" type="password" placeholder="Senha" id="in_senha">
@@ -75,12 +73,11 @@
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = in_nome.value;
-        var nomeVar = in_idade.value;
-        var idadeVar = in_email.value;
+        var emailVar = in_email.value;
         var senhaVar = in_senha.value;
         var confirmacaoSenhaVar = in_confirmacao.value;
 
-        if (nomeVar == "" || emailVar == "" || idadeVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" ||  senhaVar == "" || confirmacaoSenhaVar == "") {
             alert('preencha os campos corretamente')
 
             return false;
