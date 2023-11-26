@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\quizJogo.css">
 
+   
 </head>
 
 <script src="./js/funcoes.js"></script>
@@ -49,85 +50,140 @@
         <div class="question" id="question-container"></div>
         <div class="option" id="options-container"></div>  
         <button class="botao" onclick="nextQuestion()">Próxima Pergunta</button>
+        <div id="quiz-result-container"></div>
         <p class="pontuacao" id="score">Pontuação: 0</p>
+   
+
+       
     </div>
+
+  
 
 </body>
 </html>
-    <script>
-        var currentQuestion = 0;
-        var score = 0;
+<script>
+    var currentQuestion = 0;
+    var score = 0;
+    var answered = false;
 
-        var questions = [
-            {
-                question: "1.Em que ano a marca foi fundada?",
-                options: ["1940","1949", "1970" , "1965"],
-                correctAnswer: "1949"
-            },
-            {
-                question: "2.Quantas listras tem as roupas e tenis?",
-                options: ["9","2","6","3"],
-                correctAnswer: "3"
-            },
-            {
-                question: "3. Qual nome abaixo representa um lema adidas?",
-                options: ["um por todos e todos por um", "love is love", "impossible is nothing", "i realy dont care"],
-                correctAnswer: "impossible is nothing"
-            },
-            {
-                question: "4.Qual o nome do fundador?",
-                options: ["Adolf Sandler", "Rudolf Dassler", "Adolf Dassler", "Carlos backer"," Mark Zuckerberg"],
-                correctAnswer: "Adolf Dassler"
-            },
-            {
-                question: "5.Adidas é uma marca que prioriza a sustentabilidade?",
-                options: ["Verdadeiro", "Falso"],
-                correctAnswer: "Verdadeiro"
-            }
-        ];
+    var questions = [
+        {
+            question: "1.Em que ano a marca foi fundada?",
+            options: ["1940", "1949", "1970", "1965"],
+            correctAnswer: "1949"
+        },
+        {
+            question: "2.Quantas listras têm as roupas e tênis?",
+            options: ["9", "2", "6", "3"],
+            correctAnswer: "3"
+        },
+        {
+            question: "3. Qual nome abaixo representa um lema adidas?",
+            options: ["um por todos e todos por um", "love is love", "impossible is nothing", "i really dont care"],
+            correctAnswer: "impossible is nothing"
+        },
+        {
+            question: "4.Qual o nome do fundador?",
+            options: ["Adolf Sandler", "Rudolf Dassler", "Adolf Dassler", "Carlos backer", "Mark Zuckerberg"],
+            correctAnswer: "Adolf Dassler"
+        },
+        {
+            question: "5.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "6.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "7.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "8.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "9.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "10.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "11.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "12.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "13.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "14.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+        { question: "15.Adidas é uma marca que prioriza a sustentabilidade para fabricar os produtos?",
+            options: ["Verdadeiro", "Falso"],
+            correctAnswer: "Verdadeiro"
+        },
+    ];
 
-        function showQuestion() {
-            var questionContainer = document.getElementById("question-container");
-            var optionsContainer = document.getElementById("options-container");
+    function showQuestion() {
+        var questionContainer = document.getElementById("question-container");
+        var optionsContainer = document.getElementById("options-container");
 
-            questionContainer.innerHTML = "";
-            optionsContainer.innerHTML = "";
+        questionContainer.innerHTML = "";
+        optionsContainer.innerHTML = "";
 
-            questionContainer.innerHTML = questions[currentQuestion].question;
+        questionContainer.innerHTML = questions[currentQuestion].question;
 
-            for (var i = 0; i < questions[currentQuestion].options.length; i++) {
-                var option = document.createElement("button");
-                option.innerHTML = questions[currentQuestion].options[i];
-                option.onclick = checkAnswer;
-                optionsContainer.appendChild(option);
-            }
+        for (var i = 0; i < questions[currentQuestion].options.length; i++) {
+            var option = document.createElement("button");
+            option.innerHTML = questions[currentQuestion].options[i];
+            option.onclick = checkAnswer;
+            optionsContainer.appendChild(option);
         }
+    }
 
-        function checkAnswer() {
+    function checkAnswer() {
+        if (!answered) {
             var userAnswer = this.innerHTML;
 
             if (userAnswer === questions[currentQuestion].correctAnswer) {
                 score++;
             }
 
-            nextQuestion();
+            answered = true;
         }
 
-        function nextQuestion() {
-            currentQuestion++;
+        nextQuestion();
+    }
 
-            if (currentQuestion < questions.length) {
-                showQuestion();
-            } else {
-                var quizContainer = document.getElementById("quiz-container");
-                quizContainer.innerHTML = "<h2>Quiz Concluído!</h2><p>Sua pontuação final é: " + score + " de " + questions.length + "</p>";
-            }
+    function nextQuestion() {
+        currentQuestion++;
+        answered = false;
+        
 
-            var scoreElement = document.getElementById("score");
-            scoreElement.innerHTML = "Pontuação: " + score;
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            var percentageScore = (score / questions.length) * 100;
+            var quizResultContainer = document.getElementById("quiz-result-container");
+            quizResultContainer.innerHTML = "<h2>Quiz Concluído!</h2><p>Você acertou " + percentageScore.toFixed(2) + "% do quiz.</p>";
+
         }
 
+        var scoreElement = document.getElementById("score");
+        scoreElement.innerHTML = "Pontuação: " + score + " de 15";
+    }
+
+    window.onload = function () {
         showQuestion();
-    </script>
-
-
+    };
+</script>
