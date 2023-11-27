@@ -67,13 +67,12 @@
 </body>
 </html>
 <script>
-    function passo1() {
-        var nome = in_nome.value
-        var email = in_email.value
-        var senha = in_senha.value
-        var confirmar = in_confirmacao.value
-    
-    
+        
+      function cadastrar() {
+        var emailVar = in_email.value
+        var senhaVar = in_senha.value
+        var confirmarVar= in_confirmacao.value
+       
         var possui_especial =
           senha.indexOf('#') >= 0 ||
           senha.indexOf('@') >= 0 ||
@@ -112,12 +111,7 @@
           segundoPasso.style.backgroundColor = "#38703D";
           numeroDois.style.color = "white";
         }
-      }
-      function cadastrar() {
-        var emailVar = in_email.value
-        var senhaVar = in_senha.value
-        var confirmarVar= in_confirmacao.value
-       
+      
     
         fetch("/usuarios/cadastrar", {
           method: "POST",
@@ -161,12 +155,11 @@
     
     
     
-        if (cep.length == 8) { erroCEP.style.display = 'none' }
-        else {erroCEP.style.display = 'block'
-              iptCep.style.borderColor = 'red'    
-        }
       }
     
-    </script>
     
     
+     
+      
+
+      
