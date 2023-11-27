@@ -67,53 +67,106 @@
 </body>
 </html>
 <script>
-
-
-    function cadastrar() {
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-        var nomeVar = in_nome.value;
-        var emailVar = in_email.value;
-        var senhaVar = in_senha.value;
-        var confirmacaoSenhaVar = in_confirmacao.value;
-
-        if (nomeVar == "" || emailVar == "" ||  senhaVar == "" || confirmacaoSenhaVar == "") {
-            alert('preencha os campos corretamente')
-
-            return false;
+    function passo1() {
+        var nome = in_nome.value
+        var email = in_email.value
+        var senha = in_senha.value
+        var confirmar = in_confirmacao.value
+    
+    
+        var possui_especial =
+          senha.indexOf('#') >= 0 ||
+          senha.indexOf('@') >= 0 ||
+          senha.indexOf('!') >= 0 ||
+          senha.indexOf('%') >= 0 ||
+          senha.indexOf('?') >= 0 ||
+          senha.indexOf('-') >= 0 ||
+          senha.indexOf('+') >= 0 ||
+          senha.indexOf('_') >= 0;
+    
+        
+        if (email.indexOf('@') >= 0 && (email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.school'))) {
+          erroEmail.style.display = 'none'
+      
         }
-
-
-        // Enviando o valor da nova input
+        else {
+          erroEmail.style.display = 'block';
+          iptEmail.style.borderColor = 'red';
+        }
+    
+        if (senha.length >= 8 && possui_especial && (senha != senha.toUpperCase() && senha != senha.toLowerCase())) {
+          erroSenha.style.display = 'none'
+        }
+        else {
+          erroSenha.style.display = 'block'
+          iptSenha.style.borderColor = 'red'
+        }
+    
+        if (email.indexOf('@') >= 0 && (email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.school')) && senha.length >= 8 && possui_especial && (senha != senha.toUpperCase() && senha != senha.toLowerCase())) {
+          direito.style.display = "none";
+          esquerdo.style.display = "block";
+          passoUm.style.display = "none";
+          cadastrarse.style.display = "block";
+          botaoVoltar.style.display = "block";
+          divBotao.style.flexDirection = "row";
+          segundoPasso.style.backgroundColor = "#38703D";
+          numeroDois.style.color = "white";
+        }
+      }
+      function cadastrar() {
+        var emailVar = in_email.value
+        var senhaVar = in_senha.value
+        var confirmarVar= in_confirmacao.value
+       
+    
         fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+            nomeServer: nomeVar,
+            confirmarServer: confirmarVar
+          }),
+        })
+          .then(function (resposta) {
             console.log("resposta: ", resposta);
-
+    
             if (resposta.ok) {
-                setTimeout(() => {
-                    window.location = "login_MUS.html";
-                }, "2000")
-
-
+              // cardErro.style.display = "block";
+              // cardErro.style.border = 'solid 1px #091227';
+              // mensagem_erro.innerHTML =
+              //   "Cadastro realizado com sucesso! <br> Redirecionando para tela de Login...";
+    
+              setTimeout(() => {
+                window.location = "login.html";
+              }, "2000");
+    
+              // limparFormulario();
+              // finalizarAguardar();
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+              throw "Houve um erro ao tentar realizar o cadastro!";
             }
-        }).catch(function (resposta) {
+          })
+          .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-        });
-
+            // finalizarAguardar();
+          });
+    
         return false;
-    }
-</script>
+    
+    
+    
+        if (cep.length == 8) { erroCEP.style.display = 'none' }
+        else {erroCEP.style.display = 'block'
+              iptCep.style.borderColor = 'red'    
+        }
+      }
+    
+    </script>
+    
+    

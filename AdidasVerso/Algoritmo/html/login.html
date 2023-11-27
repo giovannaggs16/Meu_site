@@ -48,8 +48,8 @@
             <div class="textologin">
                 <h1 class="fraselogin">Login</h1><br>
                 <div class="centralizar_input">
-                   <input type="text" name="Usuario" placeholder="Usuario" id="in_usuario">
-                   <input type="password" name="senha" placeholder="Senha" id="in_senha">
+                   <input type="text" name="email" placeholder="Email" id="input_email">
+                   <input type="password" name="senha" placeholder="Senha" id="input_senha">
                 </div>
                 <div class="sem-cad">
                     <a class="botaoVoltarParaATeladeCadastro" href="cadastro.html"> Não tem uma conta ? Clique aqui!</a>
@@ -66,18 +66,27 @@
 </html>
 <script>
     function entrar() {
-        var emailVar = in_usuario.value;
-        var senhaVar = in_senha.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            alert('preencha os campos corretamente')
-
-            return false;
+        //Validando o email de Login//
+        
+        if (emailVar.indexOf('@') >= 0 && (emailVar.endsWith('.com') || emailVar.endsWith('.br') || emailVar.endsWith('.school'))) {
+        erroEmail.style.display = 'none'
+        }
+        else {
+        erroEmail.style.display = 'block';
+        input_email.style.borderColor = 'red';
         }
 
 
+    if (senhaVar.trim() === '') {
+        document.getElementById("mensagemErro").textContent = "Senha em branco."
+    } else {
+        document.getElementById("mensagemErro").textContent = ""
+    } 
 
-        console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
@@ -95,29 +104,25 @@
             if (resposta.ok) {
                 console.log(resposta);
 
-                resposta.json().then(json => {
+                resposta.json().then((json) => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idusuario;
-                    sessionStorage.VOTO_USUARIO = json.fkvoto;
-
-                    setTimeout(function () {
-                        window.location = "./Musicas.html";
-                    }, 1000); // apenas para exibir o loading
-
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome;
+                    sessionStorage.ID_USUARIO = json[0].idUsuario;
+                    sessionStorage.CNPJ_USUARIO = json[0].cnpj;
+                    sessionStorage.TELEFONE_USUARIO = json[0].telefone;
+                    window.location = "./conta.html";
                 });
 
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-
-                });
+                // resposta.text().then(texto => {
+                //     console.error(texto);
+                //     finalizarAguardar(texto);
+                // });
             }
 
         }).catch(function (erro) {
@@ -126,6 +131,13 @@
 
         return false;
     }
+
+
+
+
+
+
+
 
 
 
