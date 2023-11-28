@@ -32,6 +32,8 @@
 }
 
 .title p {
+    color: #FFFFFF;
+
     text-align: center;
 }
 
@@ -49,25 +51,3 @@
     align-items: center;
     width: 100%;
 }
-.avaliacao{
-    background-color: #2e9ab7;
-    margin-top: 200px;
-    display: flex;
-    justify-content: center;
-}
-
-#comentario{
-    width: 30%;
-    height: 20px;
-}
-
-.avaliacao button{
-    background-color: #9eb7e0;
-    width: 20%;
-    height: 20%;
-}
-.servico .img_servico {
-    display: flex;
-    justify-content: flex-end;
-}
-

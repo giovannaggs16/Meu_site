@@ -7,9 +7,10 @@
     color: #FFFFFF;
     justify-content: space-between;
     display: flex;
+    align-items: center;
     margin: 0 auto;
     width: 90%;
-    padding: 25px;
+    padding: 2px;
 }
 
 .footer .container-2 p{
@@ -20,8 +21,20 @@
     
 }
 
+.footer .container-2 .insta img {
+
+    height: 100px;
+}
+.footer .container-2 .insta h5 {
+
+  color: #fff;
+}
+.footer .container-2 .facebook img {
+
+    height: 65px;
+}
 .footer .container-2 .contatos img {
-    padding: 5px;
+  
     height: 100px;
 }
 
@@ -36,15 +49,14 @@
     align-items: center;
 }
 
-.footer .linha p{
-    padding: 10px 40px;
-    color: #FFFFFF;
-    /* margin: 0 132px 0 142px; */
 
-    
-}
 
 .footer .container-2 .conheca-nos a{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 50px;
+}
+.footer .container-2 .conheca-nos h5 {
     text-decoration: none;
     color: #fff;
     margin-top: 50px;

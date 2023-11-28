@@ -12,7 +12,7 @@
 
 </head>
 
-<script src="./js/funcoes.js"></script>
+
 
 <body>
     <div class="header">
@@ -53,8 +53,8 @@
                 </div>
                 <div class="sem-cad">
                     <a class="botaoVoltarParaATeladeCadastro" href="cadastro.html"> Não tem uma conta ? Clique aqui!</a>
-                </div>         
-                <div class="div_botaologin">
+                  </div>         
+                   <div class="div_botaologin">
                     <button class="botaologin" onclick="entrar()"><a>Entrar</a></button>
                  </div>
               </div>
@@ -65,80 +65,73 @@
 
 </html>
 <script>
-    function entrar() {
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
+function entrar() {
+    // aguardar();
 
-        //Validando o email de Login//
-        
-        if (emailVar.indexOf('@') >= 0 && (emailVar.endsWith('.com') || emailVar.endsWith('.br') || emailVar.endsWith('.school'))) {
-        erroEmail.style.display = 'none'
-        }
-        else {
-        erroEmail.style.display = 'block';
-        input_email.style.borderColor = 'red';
-        }
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
 
-
-    if (senhaVar.trim() === '') {
-        document.getElementById("mensagemErro").textContent = "Senha em branco."
-    } else {
-        document.getElementById("mensagemErro").textContent = ""
-    } 
-
-    console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then((json) => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json[0].email;
-                    sessionStorage.NOME_USUARIO = json[0].nome;
-                    sessionStorage.ID_USUARIO = json[0].idUsuario;
-                    sessionStorage.CNPJ_USUARIO = json[0].cnpj;
-                    sessionStorage.TELEFONE_USUARIO = json[0].telefone;
-                    window.location = "./conta.html";
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                // resposta.text().then(texto => {
-                //     console.error(texto);
-                //     finalizarAguardar(texto);
-                // });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
+    if (emailVar == "" || senhaVar == "") {
+        cardErro.style.display = "block"
+        alert("Mensagem de erro para todos os campos em branco");
+        // finalizarAguardar();
         return false;
     }
+    else {
+        // setInterval(sumirMensagem, 5000)
+    }
 
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
 
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
 
+        if (resposta.ok) {
+            console.log(resposta);
 
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+                // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
+                setTimeout(function () {
+                    window.location = "quiz.html";
+                }, 1000); // apenas para exibir o loading
 
+            });
 
+        } else {
 
+            console.log("Houve um erro ao tentar realizar o login!");
 
+            resposta.text().then(texto => {
+                alert("E-mail ou senha inválidos!");
+                // finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
+// function sumirMensagem() {
+//     cardErro.style.display = "none"
+// }
 
 </script>
