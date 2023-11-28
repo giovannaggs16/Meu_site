@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdidasVerso</title>
+
+  <script src="./js/funcoes.js"></script>
+
   <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\cadastro.css">
   <link rel="stylesheet" href="C:\Users\55119\Desktop\AdidasVersu\AdidasVerso\Algoritmo\css\navbar.css">
 
@@ -93,10 +96,7 @@
          senhaVar.indexOf('_') >= 0;
 
     if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
+      nomeVar == "" || emailVar == "" || senhaVar == "" ||confirmacaoSenhaVar == ""
     ) {
       // cardErro.style.display = "block";
       alert("Os campos não podem estar em branco!");
